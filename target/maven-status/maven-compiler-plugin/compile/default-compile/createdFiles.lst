@@ -1,4 +1,0 @@
-com\corp\app\entities\Transaction.class
-com\corp\app\repository\TransactionRepository.class
-com\corp\app\conroller\AppController.class
-com\corp\app\Application.class
