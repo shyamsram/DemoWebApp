@@ -27,7 +27,7 @@ public class Application {
             repository.save(new Transaction(new Date(System.currentTimeMillis()),"Online"));
             repository.save(new Transaction(new Date(System.currentTimeMillis()),"Store"));
             repository.save(new Transaction(new Date(System.currentTimeMillis()),"Store"));
-            
+
             for (Transaction transaction : repository.findAll()) {
                 log.info("Transactions inserte are : " + transaction.toString());
             }
