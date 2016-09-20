@@ -44,6 +44,7 @@ public class AppControllerIntegrationTest {
     @Test
     public void testgetTransactionDetailForType() throws Exception {
         ResponseEntity<Transaction> response = template.getForEntity(baseUrl.toString()+"app/trandetail/bytype/Online",Transaction.class);
+        System.out.println("response body is : " + response.getBody());
         assertThat(response.getBody().getTranId(),notNullValue());
     }
 }
