@@ -28,13 +28,13 @@ public class AppController {
         return repository.findByTranType(tranType).get(0);
     }
 
-    @RequestMapping(path = "/app/alltransactions", produces = MediaType.APPLICATION_JSON_VALUE)
-    public @ResponseBody
-    List<Transaction> getAllTransactionDetails () {
-        List<Transaction> allTransactions = new ArrayList<Transaction>();
-        for (Transaction transaction : repository.findAll()) {
-            allTransactions.add(transaction);
-        }
-        return allTransactions;
-    }
+//    @RequestMapping(path = "/app/alltransactions", produces = MediaType.APPLICATION_JSON_VALUE)
+//    public @ResponseBody
+//    List<Transaction> getAllTransactionDetails () {
+//        List<Transaction> allTransactions = new ArrayList<Transaction>();
+//        for (Transaction transaction : repository.findAll()) {
+//            allTransactions.add(transaction);
+//        }
+//        return allTransactions;
+//    }
 }
