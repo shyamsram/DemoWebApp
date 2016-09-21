@@ -55,12 +55,5 @@ public class AppControllerIntegrationTest {
         assertThat(response.getBody().getTranId(),notNullValue());
     }
 
-//    @Test
-//    public void testGetAllTransactionDetails() throws Exception {
-//        ResponseEntity<Transaction[]> response = template.getForEntity(baseUrl.toString()+"app/alltransactions",Transaction[].class);
-//        for (Transaction transaction : response.getBody()) {
-//            System.out.println("Transaction from response is : " + transaction);
-//        }
-//        assertThat(response.getBody(),notNullValue());
-//    }
+
 }
