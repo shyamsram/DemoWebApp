@@ -15,6 +15,9 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+/**
+ * mocked test class
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -23,6 +26,11 @@ public class AppControllerTest {
     @Autowired
     private MockMvc mock;
 
+    /**
+     * test default behaviour with mock
+     *
+     * @throws Exception
+     */
     @Test
     public void testIndex() throws Exception {
         mock.perform(MockMvcRequestBuilders.get("/").accept(MediaType.APPLICATION_JSON))

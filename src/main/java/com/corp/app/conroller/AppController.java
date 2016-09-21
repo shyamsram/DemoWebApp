@@ -12,22 +12,47 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This controller servers requests for Transaction details
+ *
+ */
 @RestController
 public class AppController {
+
+    /**
+     * Autowiring repository
+     */
     @Autowired
     TransactionRepository repository;
 
+    /**
+     * Default request handler
+     *
+     * @return string hello message
+     */
     @RequestMapping
     public String index() {
         return "First App running!!!";
     }
 
+    /**
+     * method to return transactions by type
+     *
+     * @param tranType
+     * @return Transaction
+     */
     @RequestMapping(path = "/app/trandetail/bytype/{tranType}", produces = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody
     Transaction getTransactionDetailForType (@PathVariable String tranType) {
         return repository.findByTranType(tranType).get(0);
     }
 
+    /**
+     * method to return transaction based on Id
+     *
+     * @param id
+     * @return transaction object
+     */
     @RequestMapping(path = "/app/trandetail/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody
     Transaction getTransactionDetailByTranId (@PathVariable Long id) {

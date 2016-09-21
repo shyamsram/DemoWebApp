@@ -31,6 +31,9 @@ import static org.junit.Assert.assertThat;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+/**
+ * Test class to support Transaction Details testing
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class AppControllerIntegrationTest {
@@ -43,17 +46,24 @@ public class AppControllerIntegrationTest {
     @Autowired
     private TestRestTemplate template;
 
+    /**
+     * setup data for all tests
+     *
+     * @throws Exception
+     */
     @Before
     public void setUp() throws Exception {
         baseUrl = new URL("http://localhost:"+port+"/");
     }
 
+    /**
+     * Test for looking up transaction details
+     * @throws Exception
+     */
     @Test
     public void testgetTransactionDetailForType() throws Exception {
         ResponseEntity<Transaction> response = template.getForEntity(baseUrl.toString()+"app/trandetail/bytype/Online",Transaction.class);
         System.out.println("response body is : " + response.getBody());
         assertThat(response.getBody().getTranId(),notNullValue());
     }
-
-
 }
