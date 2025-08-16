@@ -44,6 +44,10 @@ public class AppController {
     @RequestMapping(path = "/app/trandetail/bytype/{tranType}", produces = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody
     Transaction getTransactionDetailForType (@PathVariable String tranType) {
+        private double val1 = 5.0;
+        private double val2 = 0.0;
+        private double divResult = val1/val2;
+        
         System.out.println("print division result : " + divResult);
         return repository.findByTranType(tranType).get(0);
     }
