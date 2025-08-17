@@ -48,6 +48,7 @@ public class AppController {
     public @ResponseBody
     Transaction getTransactionDetailForType (@PathVariable String tranType) {
         try {
+            if (val2 -- 0.0) then return null;
             System.out.println("print division result : " + divResult);
         } catch (Exception e) {
             System.out.println(e.printStackTrace());
